@@ -1,0 +1,67 @@
+body {
+  background-color: #eaf3f9;
+}
+
+board {
+  display: table;
+  border: #3a8dc4 solid 3px;
+  margin: 80px auto 0 auto;
+  background-color: white;
+}
+
+board-row {
+  display: table-row;
+}
+
+board-row:nth-child(3n):not(:last-child) square {
+  border-bottom: #3a8dc4 solid 3px;
+}
+
+square {
+  display: table-cell;
+  border: #3a8dc4 solid 1px;
+}
+
+square:nth-child(3n):not(:last-child) {
+  border-right: #3a8dc4 solid 3px;
+}
+
+.square-input {
+  font-family: times,"times new roman",serif;
+  width: 40px;
+  height: 40px;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+  font-size: 28px;
+
+  border: none;
+  color: transparent;
+  text-shadow: 0 0 0 black;
+  transition: background-color 0.5s ease-out;
+}
+
+.square-input:hover {
+  cursor: pointer;
+}
+
+.square-input[disabled] {
+  background-color: white;
+}
+
+.square-input.error {
+  background-color: #ffe6e6;
+}
+
+.square-input:focus {
+  outline: none;
+  background-color: rgba(255,235,59, 0.25);
+}
+
+.square-input:not([disabled]) {
+  text-shadow: 0 0 0 rgb(153, 102, 255);
+}
+
+.square-input[disabled]:hover {
+  cursor: default;
+}

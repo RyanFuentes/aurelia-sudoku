@@ -1,0 +1,7 @@
+<template>
+  <input
+    class="square-input ${square.error ? 'error' : ''}"
+    disabled="${square.locked ? 'disabled':''}"
+    value.bind="square.val"
+    keydown.delegate="keyPressed($event)">
+</template>

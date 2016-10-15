@@ -1,0 +1,9 @@
+<template>
+  <board>
+    <board-row repeat.for="row of 9">
+      <square repeat.for="col of 9">
+        <compose view-model="square" model.bind="squares[row*9 + col]"></compose>
+      </square>
+    </board-row>
+  </board>
+</template>
