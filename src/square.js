@@ -1,16 +1,11 @@
 export class Square {
-  activate(square) {
-    this.square = square;
-  }
-
-  keyPressed = (e) => {
-    if (e.which >= 49 && e.which <= 57) {
-      this.square.val = (e.which - 48).toString();
-      e.target.blur();
-    } else if (e.which === 27 || e.which === 8) {
-      this.square.val = '';
-      e.target.blur();
-    }
-    e.preventDefault();
+  constructor(index, {val, locked}) {
+    this.val = val;
+    this.col = index % 9;
+    this.row = Math.floor(index / 9);
+    this.quadC = Math.floor((index % 9) / 3);
+    this.quadR = Math.floor(Math.floor(index / 9) / 3);
+    this.locked = locked;
+    this.valuesInProximity = [];
   }
 }
